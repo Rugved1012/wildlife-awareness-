@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation & Adoption</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('background.jpg') no-repeat center center/cover;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px auto;
+            padding: 20px;
+            max-width: 80%;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        section {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            margin: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        h2 {
+            color: #333;
+            text-align: center;
+            font-size: 24px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section id="donation">
+            <h2>Make a Donation</h2>
+            <p>Your generosity helps us continue our work and make a lasting impact. Every contribution matters!</p>
+            <form  method="POST">
+                <div class="form-group">
+                    <label for="donorName">Your Name:</label>
+                    <input type="text" id="donorName" name="donorName" required>
+                </div>
+                <div class="form-group">
+                    <label for="donorEmail">Your Email:</label>
+                    <input type="email" id="donorEmail" name="donorEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="donationAmount">Donation Amount ($):</label>
+                    <input type="text" id="donationAmount" name="donationAmount" required>
+                </div>
+                <input type="hidden" name="formType" value="donation">
+                <input type="submit" onclick="location.href='payment.html'" value="Donate Now">
+            </form> 
+        </section>
+    
+        <section id="adoption">
+            <h2>Adopt an Animal</h2>
+            <p>Give an animal a second chance by adopting today.</p>
+            <form action="submit_adoption.php" method="POST">
+                <div class="form-group">
+                    <label for="adopterName">Your Name:</label>
+                    <input type="text" id="adopterName" name="adopterName" required>
+                </div>
+                <div class="form-group">
+                    <label for="adopterEmail">Your Email:</label>
+                    <input type="email" id="adopterEmail" name="adopterEmail" required>
+                </div>
+                <input type="hidden" name="formType" value="adoption">
+                <input type="submit" value="Submit Adoption Request" onclick="sub()">
+            </form>
+        </section>
+    </div>
+</body>
+<script type="text/JavaScript">
+    function sub() {
+        const adopterName = document.getElementById('adopterName').value;
+        const adopterEmail = document.getElementById('adopterEmail').value;
+
+        if (adopterName === '' || adopterEmail === '') {
+            alert('Please fill in all fields.');
+            return false;
+        }
+
+        alert('Adoption request submitted successfully!');
+        return true;
+    }
+
+    document.querySelector('#donation form').onsubmit = function() {
+        alert('Continue to payment page.');
+        return true;
+    };
+</script>
+</html>
+
