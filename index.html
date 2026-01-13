@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WildGuardians</title>
+
+  <!-- styles -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="animations.css">
+  <link rel="stylesheet" href="responsive.css">
+
+  <style>
+    /* Welcome Overlay Styles */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw; /* Ensure the overlay takes up the full width of the viewport */
+      height: 100vh; /* Ensure the overlay takes up the full height of the viewport */
+      background-color: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000; /* Ensure it's above other elements */
+      opacity: 1;
+      transition: opacity 0.5s ease;
+      overflow: hidden; /* Prevent scrolling when the overlay is visible */
+    }
+
+    .overlay-content {
+      text-align: center;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 80%;
+      max-height: 80%;
+      overflow: auto;
+    }
+
+    .overlay h2 {
+      margin-bottom: 10px;
+    }
+
+    .overlay p {
+      margin-bottom: 20px;
+    }
+
+    .overlay-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .overlay-btn:hover {
+      background-color: #45a049;
+    }
+
+    .overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="welcome-overlay" class="overlay">
+    <div class="overlay-content">
+      <h2>Welcome to WildGuardians</h2>
+      <p>Your journey to saving wildlife starts here!</p>
+      <button id="close-overlay" class="overlay-btn">Go ahead</button>
+    </div>
+  </div>
+
+  <section id="hero">
+    <div class="section-box">
+      <div class="content-wrap">
+        <header>
+          <a class="header-logo"><span>wild</span>guardians</a>
+          <nav>
+            <a class="nav-items" href="#hero">Home</a>
+            <a class="nav-items" href="about us.html">about us</a>
+            <a class="nav-items"  href="Projects.html" >projects</a>
+            <a class="nav-items" href="adopt.html">Adopt & Donate</a>
+            <a class="nav-items"href ="blog.html">blog</a>
+            <a class="nav-items" href="#footer">contacts</a>
+          </nav>
+        </header>
+        <div class="hero-content">
+          <h3>protect</h3>
+          <h1>wildanimals</h1>
+          <img src="45.png" class="hero-img">
+          <button class="hero-btn" onclick="location.href='adopt.html'">join with us</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-box">
+      <div class="content-grid">
+        <div class="left-grid">
+          <h3 class="section-sub">About us</h3>
+          <h2 class="section-title">Who we are?</h2>
+          <p>
+            At WildlifeGuardians, we are committed to the preservation and protection of endangered species worldwide.
+            Our mission is to create awareness, provide resources for conservation efforts, and take direct action to
+            save vulnerable wildlife from extinction. With over a decade of experience, our team of environmentalists,
+            biologists, and volunteers works tirelessly to protect Earth's most precious creatures and their habitats.
+          </p>
+          <button class="action-btn" onclick="location.href='about us.html'">Learn More</button>
+        </div>
+
+        <div class="right-grid">
+          <img src="about-img.png" class="about-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-box">
+      <div class="content-grid">
+        <div class="right-grid">
+          <img src="projects-img.png" class="about-img">
+        </div>
+        <div class="left-grid">
+          <h3 class="section-sub">projects</h3>
+          <h2 class="section-title">What we did?</h2>
+          <p>
+            1. Project Savannah Shield – A dedicated effort to protect the last remaining herds of African elephants
+            from poaching in Kenya’s savannah.<br><br>
+
+            2. Project Savannah Shield – A dedicated effort to protect the last remaining herds of African elephants
+            from poaching in Kenya’s savannah.<br><br>
+
+            3. Project Savannah Shield – A dedicated effort to protect the last remaining herds of African elephants
+            from poaching in Kenya’s savannah.
+          </p>
+          <button class="action-btn" onclick="location.href='Projects.html'">more projects</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="join-us">
+    <div class="section-box">
+      <div class="content-wrap">
+        <h3 class="section-sub">join with us</h3>
+        <h2 class="section-title">Save Wildlife, Protect Nature</h2>
+        <form action="submit_form.php" method="post" class="join-form">
+          <input type="text" class="input-1 i1" name="name" placeholder="Your Name" required>
+          <input type="email" class="input-1 i2" name="email" placeholder="Your Email" required>
+          <input type="text" class="input-1 i3" name="number" placeholder="Your Number" required>
+          <input type="text" class="input-1 i4" name="address" placeholder="Your Address" required>
+          <p>Membership</p>
+          <div class="checkbox-wrap">
+            <label><input type="radio" name="membership" value="Individual" required> Individual</label>
+            <label><input type="radio" name="membership" value="Family" required> Family</label>
+            <label><input type="radio" name="membership" value="Corporate" required> Corporate</label>
+          </div>
+          <button type="submit" class="join-btn">be a member</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="footer">
+    <div class="section-box">
+      <div class="footer-grid">
+
+        <div>
+          <h3>Quick Links</h3>
+
+          <a class="footer-items1" href="#hero">Home</a>
+          <a class="footer-items2" href="about us.html">about us</a>
+          <a class="footer-items3"  href="Projects.html" >projects</a>
+          <a class="footer-items4" href="adopt.html">Adopt & Donate</a>
+          <a class="footer-items5"href ="blog.html">blog</a>
+          
+        </div>
+
+        <div>
+          <h3>Contacts</h3>
+
+          <a class="footer-items f1">95296 07200</a>
+          <a class="footer-items f2">88502 39874</a>
+          <a class="footer-items f2">82082 44443</a>
+          <a href="https://www.worldwildlife.org/" class="footer-items f3">https://www.worldwildlife.org</a>
+
+        </div>
+
+        <div>
+          <h3>Socials</h3>
+
+          <a href="https://facebook.com/rugvedavere" class="footer-items f1" target="_blank">facebook</a>
+          <a href="https://youtube.com/rugvedavere" class="footer-items f2" target="_blank">Youtube </a>
+          <a href="https://instagram.com/rugvedavere" class="footer-items f3" target="_blank">Instagram</a>
+          <a href="https://linked.in/rugvedavere" class="footer-items f4" target="_blank">Linkedin</a>
+          <a href="https://twitter.com/rugvedavere" class="footer-items f5" target="_blank">Twitter</a>
+        </div>
+
+      </div>
+
+      <p class="copyrights">© Rugved Avere  | all rights reserved</p>
+    </div>
+  </section>
+
+  <!-- JavaScript for the overlay -->
+  <script>
+    // Wait for the page to load
+    window.addEventListener('load', function() {
+      // Show the overlay
+      const overlay = document.getElementById('welcome-overlay');
+      
+      // Set a timeout to hide the overlay after 3 seconds
+      setTimeout(() => {
+        overlay.classList.add('hidden');
+      }, 3000); // 3 seconds
+
+      // Close the overlay when the button is clicked
+      const closeButton = document.getElementById('close-overlay');
+      closeButton.addEventListener('click', function() {
+        overlay.classList.add('hidden');
+      });
+    });
+  </script>
+
+</body>
+
+</html>
