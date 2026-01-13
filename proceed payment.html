@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WildGuardians Payment - Complete</title>
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #11cb21 0%, #ffffff 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        /* Fade In Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Payment Container */
+        .payment-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        /* Header */
+        .payment-container h1 {
+            color: #4CAF50;
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* Form Styling */
+        .credit-card-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .credit-card-form input[type="text"],
+        .credit-card-form input[type="number"],
+        .credit-card-form input[type="date"] {
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            outline: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .credit-card-form input[type="text"]:focus,
+        .credit-card-form input[type="number"]:focus,
+        .credit-card-form input[type="date"]:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+        }
+
+        .credit-card-form button {
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .credit-card-form button:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+        }
+
+        /* QR Code Section Styling */
+        .payment-section {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-section h2 {
+            font-size: 24px;
+            color: #4CAF50;
+            font-weight: 600;
+        }
+
+        .qr-code img {
+            max-width: 200px; /* Increased from 100px to 200px */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="payment-container">
+        <h1>Complete Your Payment</h1>
+        <p>Choose your payment method</p>
+
+        <!-- Credit Card Form -->
+        <div class="credit-card-form">
+            <h3>Credit Card Payment</h3>
+            <input type="text" placeholder="Cardholder's Name" required>
+            <input type="number" placeholder="Card Number" required>
+            <input type="date" placeholder="Expiry Date" required>
+            <input type="number" placeholder="CVV" required>
+            <button type="submit">Pay with Credit Card</button>
+        </div>
+
+        <!-- QR Code Section -->
+        <div class="payment-section">
+            <h2>Or Scan QR Code to Pay</h2>
+            <div class="qr-code">
+                <img src="qr1.jpg" alt="QR Code"> <!-- Replace with your actual QR code image -->
+            </div>
+            <p>Scan the QR code to complete the payment.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

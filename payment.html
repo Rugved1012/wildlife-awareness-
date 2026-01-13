@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WildGuardians Payment</title>
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #11cb2d 0%, #f3f4f7 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        /* Fade In Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Payment Container */
+        .payment-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            animation: slideUp 1s ease-out;
+        }
+
+        /* Slide Up Animation */
+        @keyframes slideUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Header */
+        .payment-container h1 {
+            color: #4CAF50;
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            animation: fadeInHeader 1.5s ease-in;
+        }
+
+        /* Fade In Header Animation */
+        @keyframes fadeInHeader {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Form Styling */
+        .payment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            opacity: 0;
+            animation: fadeInForm 1.5s ease-in 1s forwards;
+        }
+
+        /* Fade In Form Animation */
+        @keyframes fadeInForm {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .payment-form input[type="text"],
+        .payment-form input[type="email"],
+        .payment-form input[type="number"] {
+            padding: 15px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            outline: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .payment-form input[type="text"]:focus,
+        .payment-form input[type="email"]:focus,
+        .payment-form input[type="number"]:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+        }
+
+        .payment-form button {
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .payment-form button:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+        }
+
+        /* Payment Section Styling */
+        .payment-section {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeInSection 1.5s ease-in 1.5s forwards;
+        }
+
+        /* Fade In Payment Section Animation */
+        @keyframes fadeInSection {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .payment-section h2 {
+            font-size: 24px;
+            color: #4CAF50;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="payment-container">
+        <h1>WildGuardians Payment</h1>
+        <p>Support our wildlife protection efforts with your contribution!</p>
+
+        <div class="payment-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="number" placeholder="Amount (INR)" required>
+            <a href="proceed payment.html"><button type="submit">Proceed to Payment</button></a> <!-- Redirects to next page -->
+        </div>
+    </div>
+
+</body>
+
+</html>
